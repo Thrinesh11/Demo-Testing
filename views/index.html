@@ -6,32 +6,79 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="AI">
     <meta name="author" content="Thrinesh Idimukkula  @Thrinesh">
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+
+
     <title>AI  </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    
-     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1">
-  var id = sessionStorage.getItem("DAS_ID");</script>
-<df-messenger
-  chat-icon="https://storage.googleapis.com/cloudprod-apiai/4c091ced-19a6-46c6-a8ac-167691c0e2e8_x.png"
-  intent="WELCOME"
-  chat-title="Sandwich_maker"
-  agent-id="1b0ab59c-faa8-4875-808b-17c0059dcd51"
-  language-code="en"
-user-id = id
-></df-messenger>
+	
+<meta name="viewport" content="width-device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <div id='messenger'>
+
+</div>
+
+
+<script>
+function testFun(das){
+alert(das);
+sessionStorage.DAS_ID = das;
+	 var id = sessionStorage.DAS_ID;
+	 return id;
+	 reload();
+	 
+
+}
+
+  var id = sessionStorage.DAS_ID;
+
+alert("please enter DASID in input Field to see dynamic response");
+
+
+
+$('#messenger').append("<df-messenger chat-icon='https://storage.googleapis.com/cloudprod-apiai/de831edb-c207-4f8b-86f6-eb76e8bc0c33_x.png' intent='WELCOME' chat-title='Atos-Syntel bot' agent-id='1b0ab59c-faa8-4875-808b-17c0059dcd51' language-code='en' user-id = '"+id+"'></df-messenger>")
+</script>
   </head>
+  
+  <style>
+  input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+  df-messenger {
+   --df-messenger-bot-message: #878fac;
+   --df-messenger-chat-background-color: #fafafa;
+   --df-messenger-font-color: white;
+   --df-messenger-send-icon: #878fac;
+   --df-messenger-user-message: #479b3d;
+  }
+</style>
+
 
   <body>
+<div class="container">
           <div class="header">
     <img src="logo.png" alt="logo"  class="logo" width = '200'/>
   </div>
-    
+   <h1 class="text-white">AI </h1>
+    <section>
+<form>
+  <input name="text" type="text" placeholder="please enter dasid">
+      <input type="submit" value="Submit" onclick="testFun(form.text.value)">
+</form>
+</section>
+
+    <!-- tag
     <h1 class="text-white">AI </h1>
     <section>
       <!--div>
         <img src="images/miet.png" style="width: 100px">
-      </div-->
+      </div--><!--
       <button><i class="fa fa-microphone"></i></button>
 
       <div>
@@ -41,10 +88,11 @@ user-id = id
     </section>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>-->
     
           <div class="footer">
   <p>© Copyright 2020, All Rights Reserved    Page developed by Thrinesh.idimukkala</p>
+</div>
 </div>
   </body>
 </html>
